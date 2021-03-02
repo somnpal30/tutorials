@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"ng serve\" \"json-server --watch .\\src\\assets\\data.json\" ",
+    "start-all": "concurrently \"ng serve\" \"json-server --watch .\\src\\assets\\data.json\" ",
+    "start": "ng serve --port 4700",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
