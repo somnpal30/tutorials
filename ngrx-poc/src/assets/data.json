@@ -1,0 +1,14 @@
+{
+	"products": [
+		{
+			"id": 100,
+			"name": "Apple",
+			"details": "The Red Delicious Big Apple"
+		},
+		{
+			"id": 101,
+			"name": "Orange",
+			"details": "A juicy tangy tasty Orange"
+		}
+	]
+}

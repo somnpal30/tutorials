@@ -1,0 +1,26 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import {ProductComponent} from './view/product/product.component';
+import {ProductAddComponent} from './view/product-add/product-add.component';
+import {ProductDisplayComponent} from './view/product-display/product-display.component';
+import {FormsModule} from '@angular/forms';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductComponent,
+    ProductAddComponent,
+    ProductDisplayComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }

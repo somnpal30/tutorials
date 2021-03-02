@@ -1,0 +1,11 @@
+<div style="margin: 1em;">
+  <p>Product List : </p>
+  <div  class="row">
+    <div class="col">Product Name</div>
+    <div class="col">Product Details</div>
+  </div>
+  <div *ngFor="let prod of products" class="row">
+    <div class="col">{{prod.name}}</div>
+    <div class="col">{{prod.detail}}</div>
+  </div>
+</div>
