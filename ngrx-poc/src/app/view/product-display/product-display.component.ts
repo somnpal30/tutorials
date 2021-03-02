@@ -14,7 +14,7 @@ export class ProductDisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const product: Product = {name: 'Apple' , detail : 'This is a Red Apple'};
+    const product: Product = new Product('Apple', 'This is a Red Apple');
     this.products.push(product);
   }
 
