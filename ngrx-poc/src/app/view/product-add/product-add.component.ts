@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {addProduct} from '../../actions/product.actions';
+import {Product} from '../../model/product.model';
 
 @Component({
   selector: 'app-product-add',
@@ -9,7 +12,7 @@ export class ProductAddComponent implements OnInit {
   prodName: string = '';
   prodDetail: string = '';
 
-  constructor() {
+  constructor(public store: Store) {
   }
 
   ngOnInit(): void {
@@ -18,6 +21,7 @@ export class ProductAddComponent implements OnInit {
 
   addProduct = () => {
     console.log('...add product ' + this.prodName);
+    this.store.dispatch(addProduct({product: new Product(this.prodName, this.prodDetail)}));
     this.reset();
   };
 
