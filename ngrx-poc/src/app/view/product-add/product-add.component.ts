@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {addProduct} from '../../actions/product.actions';
+import {addProduct, addProducts} from '../../actions/product.actions';
 import {Product} from '../../model/product.model';
 
 @Component({
@@ -21,7 +21,7 @@ export class ProductAddComponent implements OnInit {
 
   addProduct = () => {
     console.log('...add product ' + this.prodName);
-    this.store.dispatch(addProduct({product: new Product(this.prodName, this.prodDetail)}));
+    this.store.dispatch(addProducts({product: new Product(this.prodName, this.prodDetail)}));
     this.reset();
   };
 
