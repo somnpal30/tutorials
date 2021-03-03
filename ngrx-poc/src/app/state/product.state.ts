@@ -1,9 +1,9 @@
 import {Product} from '../model/product.model';
 
-/*export interface ProductListState {
+export interface ProductState {
   products: Product[];
 }
-
+/*
 export const initialState: ProductListState = {
   products: []
 };*/
