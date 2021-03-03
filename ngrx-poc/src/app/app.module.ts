@@ -10,8 +10,8 @@ import {FormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
-import {productReducer} from './reducers';
-import {addProductListReducer, loadProductListReducer} from './reducers/product-list.reducer';
+import {productReducer} from './state/reducers/product-list.reducer';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +24,7 @@ import {addProductListReducer, loadProductListReducer} from './reducers/product-
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({ addProduct: addProductListReducer , loadProducts : loadProductListReducer}),
+    StoreModule.forRoot({myProduct: productReducer}),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],

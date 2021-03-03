@@ -1,27 +1,20 @@
-import {createReducer, on} from '@ngrx/store';
-import {Product} from '../model/product.model';
-import {addProducts, loadProducts} from '../actions/product.actions';
+import { Action } from '@ngrx/store';
 
 
 export const productListFeatureKey = 'productList';
 
-export interface ProductListState {
-  products: Product[];
+export interface State {
+
 }
 
-export const initialState: ProductListState = {
-  products: []
+export const initialState: State = {
+
 };
 
-export const addProductListReducer = createReducer(initialState.products,
-  on(addProducts, (state, {product}) => {
-    return [...state, product];
-  })
-);
+export function reducer(state = initialState, action: Action): State {
+  switch (action.type) {
 
-export const loadProductListReducer = createReducer(initialState.products,
-  on(loadProducts, (state, {products}) => {
-    return [...products];
-  })
-);
-
+    default:
+      return state;
+  }
+}

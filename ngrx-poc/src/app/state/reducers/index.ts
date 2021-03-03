@@ -1,6 +1,4 @@
-import {createReducer, on} from '@ngrx/store';
-import {Product} from '../model/product.model';
-import {addProduct} from '../actions/product.actions';
+import {Product} from '../../model/product.model';
 
 
 export interface ProductState {
@@ -11,10 +9,12 @@ const initialState: ProductState = {
   product: null
 };
 
+/*
 export const productReducer = createReducer(initialState,
-  on(addProduct, (state, product) => {
-    return product;
+  on(addProduct, (state, {product}) => {
+    return [];
   }));
+*/
 
 /*
 export const reducers: ActionReducerMap<State> = {};
