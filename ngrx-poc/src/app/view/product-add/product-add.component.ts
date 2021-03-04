@@ -22,7 +22,7 @@ export class ProductAddComponent implements OnInit {
 
   addProduct = () => {
     if (this.prodName && this.prodDetail) {
-      this.store.dispatch(addProducts({payload: new Product(this.prodName, this.prodDetail)}));
+      this.store.dispatch(addProducts({product: new Product(this.prodName, this.prodDetail)}));
     }
 
     this.reset();

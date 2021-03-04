@@ -12,9 +12,9 @@ export const productListFeatureKey = 'productList';
 );*/
 
 export const productReducer = createReducer(initialState,
-  on(ProductAction.addProducts, (state, {payload}) => {
-    console.log(payload);
-    return [...state, payload];
+  on(ProductAction.addProducts, (state, {product}) => {
+    console.log(product);
+    return [...state, product];
   })
 );
 
