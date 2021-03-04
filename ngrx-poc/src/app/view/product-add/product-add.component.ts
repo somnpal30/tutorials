@@ -14,7 +14,7 @@ export class ProductAddComponent implements OnInit {
   prodName = '';
   prodDetail = '';
 
-  constructor(private store: Store<{ productListFeatureKey: SampleState }>) {
+  constructor(private store: Store<SampleState>) {
   }
 
   ngOnInit(): void {

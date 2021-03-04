@@ -9,6 +9,7 @@ export interface SampleState {
   products: Product[];
 }
 
+
 export const initialState: SampleState = {
   products: []
 };
