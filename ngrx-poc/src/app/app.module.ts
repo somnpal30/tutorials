@@ -12,7 +12,6 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
 import {productReducer} from './state/reducers/product-list.reducer';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,7 @@ import {productReducer} from './state/reducers/product-list.reducer';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({myProduct: productReducer}),
+    StoreModule.forRoot({productListFeatureKey: productReducer}),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],

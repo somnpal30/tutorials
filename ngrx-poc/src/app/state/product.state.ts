@@ -1,10 +1,12 @@
 import {Product} from '../model/product.model';
 
-export interface ProductState {
+export interface State {
+  //sum: number;
   products: Product[];
 }
-/*
-export const initialState: ProductListState = {
-  products: []
-};*/
+
+export const initialState1: State = {
+  products: [],
+  //sum: 0
+};
 export const initialState: ReadonlyArray<Product> = [];

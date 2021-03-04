@@ -14,12 +14,12 @@ export class ProductDisplayComponent implements OnInit {
   products$: Observable<Product[]> | undefined;
 
 
-  constructor(private store: Store<{ myProduct: Product[] }>) {
+  constructor(private store: Store<{ productListFeatureKey: Product[] }>) {
   }
 
 
   ngOnInit(): void {
-    this.products$ = this.store.select('myProduct');
+    this.products$ = this.store.select('productListFeatureKey');
   }
 
 }
