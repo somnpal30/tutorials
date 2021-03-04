@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
-import {addProducts} from '../../state/actions/product.actions';
+import {addProducts, addQuantity} from '../../state/actions/product.actions';
 import {Product} from '../../model/product.model';
 import {SampleState} from '../../reducers/sample.reducer';
 
@@ -21,7 +21,7 @@ export class ProductAddComponent implements OnInit {
   }
 
   addProduct = () => {
-    if (this.prodName && this.prodDetail) {
+    if ((this.prodName && this.prodDetail) && is_numeric(this.prodDetail)) {
       this.store.dispatch(addProducts({product: new Product(this.prodName, this.prodDetail)}));
     }
 
@@ -31,4 +31,12 @@ export class ProductAddComponent implements OnInit {
   reset = () => {
     this.prodName = this.prodDetail = '';
   };
+
+  calculateQuantity = () => {
+    this.store.dispatch(addQuantity());
+  };
+}
+
+function is_numeric(str: string) {
+  return /^\d+$/.test(str);
 }

@@ -1,15 +1,16 @@
 <div style="margin: 1em;">
 
-    <div class="row">
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Product name"  [(ngModel)]="prodName">
-      </div>
-      <div class="col">
-        <input type="text" class="form-control" placeholder="Product Quantity" [(ngModel)]="prodDetail" >
-      </div>
-      <div class="col">
-        <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
-      </div>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Product name" [(ngModel)]="prodName">
     </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Product Quantity" [(ngModel)]="prodDetail">
+    </div>
+    <div class="col">
+      <button class="btn btn-primary" (click)="addProduct()">Add Product</button>
+      <button class="btn btn-info" (click)="calculateQuantity()">Calculate Quantity</button>
+    </div>
+  </div>
 
 </div>

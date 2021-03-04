@@ -5,6 +5,10 @@ import {SampleState} from '../../reducers/sample.reducer';
 const getProductState = createFeatureSelector<SampleState>('productListFeatureKey');
 
 export const getProduct = createSelector(getProductState, state => {
-  console.log(state)
-  return state.products;
+   return state.products;
 });
+
+export const getTotalQuantity = createSelector(getProductState, state => {
+  return state.sum;
+});
+
