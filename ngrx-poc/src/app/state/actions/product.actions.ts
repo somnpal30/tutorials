@@ -3,6 +3,7 @@ import {Product} from '../../model/product.model';
 
 
 export const addProducts
-    = createAction('[Product] ADD Products', props<{ product: Product }>());
+  = createAction('[Product] ADD Products', props<{ product: Product }>());
 
 
+const testAction = addProducts({product: new Product('a', 'a')});

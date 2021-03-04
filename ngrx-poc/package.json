@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start-all": "concurrently \"ng serve\" \"json-server --watch .\\src\\assets\\data.json\" ",
-    "start": "ng serve --port 4700",
+    "start": "ng serve --port 4800",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

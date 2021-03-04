@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Store} from '@ngrx/store';
 import {addProducts} from '../../state/actions/product.actions';
 import {Product} from '../../model/product.model';
+import {SampleState} from '../../reducers/sample.reducer';
 
 
 @Component({
@@ -13,11 +14,10 @@ export class ProductAddComponent implements OnInit {
   prodName = '';
   prodDetail = '';
 
-  constructor(private store: Store<{ myProduct: Product[] }>) {
+  constructor(private store: Store<{ productListFeatureKey: SampleState }>) {
   }
 
   ngOnInit(): void {
-
   }
 
   addProduct = () => {

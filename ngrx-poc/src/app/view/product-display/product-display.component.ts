@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Product} from '../../model/product.model';
 import {Store} from '@ngrx/store';
 import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {SampleState} from '../../reducers/sample.reducer';
 
 @Component({
   selector: 'app-product-display',
@@ -14,12 +16,13 @@ export class ProductDisplayComponent implements OnInit {
   products$: Observable<Product[]> | undefined;
 
 
-  constructor(private store: Store<{ productListFeatureKey: Product[] }>) {
+  constructor(private store: Store<{ productListFeatureKey: SampleState }>) {
   }
 
 
   ngOnInit(): void {
-    this.products$ = this.store.select('productListFeatureKey');
+    this.products$ = this.store.select('productListFeatureKey').pipe(map(data => data['products']));
+
   }
 
 }
