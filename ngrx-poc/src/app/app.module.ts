@@ -10,8 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {StoreModule} from '@ngrx/store';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {environment} from '../environments/environment';
-import {productReducer} from './state/reducers/product-list.reducer';
-import {reducer} from './reducers/sample.reducer';
+import {messageReducer, reducer} from './reducers/sample.reducer';
 
 @NgModule({
   declarations: [
@@ -24,7 +23,15 @@ import {reducer} from './reducers/sample.reducer';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    StoreModule.forRoot({productListFeatureKey: reducer}),
+    StoreModule.forRoot({productListFeatureKey: reducer, msgReducer : messageReducer},
+      {
+        runtimeChecks: {
+          strictStateImmutability: true,
+          strictActionImmutability: true,
+         /* strictActionSerializability:true,
+          strictStateSerializability:true*/
+        }
+      }),
     !environment.production ? StoreDevtoolsModule.instrument() : []
   ],
   providers: [],

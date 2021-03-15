@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {displayMessage} from '../../state/actions/product.actions';
+import {Observable} from 'rxjs';
+import {displayMessageSelector} from '../../state/selector/product.selector';
 
 @Component({
   selector: 'app-product',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductComponent implements OnInit {
 
-  constructor() { }
+  greetingMessage$: Observable<string> | undefined;
 
-  ngOnInit(): void {
+  constructor(private store: Store) {
   }
 
+  ngOnInit(): void {
+    this.greetingMessage$ = this.store.select(displayMessageSelector);
+  }
+
+  test() {
+    this.store.dispatch(displayMessage());
+  }
 }

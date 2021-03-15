@@ -14,7 +14,7 @@ export class ProductDisplayComponent implements OnInit {
 
   products: Product[] = [];
   products$: Observable<Product[]> | undefined;
-  quantity$:Observable<number>|undefined;
+  quantity$: Observable<number> | undefined;
 
   constructor(private store: Store<SampleState>) {
   }
@@ -22,7 +22,7 @@ export class ProductDisplayComponent implements OnInit {
 
   ngOnInit(): void {
     this.products$ = this.store.select(getProduct);
-    this.quantity$ = this.store.select(getTotalQuantity)
+    this.quantity$ = this.store.select(getTotalQuantity);
   }
 
 }

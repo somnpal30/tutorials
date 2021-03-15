@@ -10,3 +10,4 @@ export const initialState1: State = {
   //sum: 0
 };
 export const productsInitialState: ReadonlyArray<Product> = [];
+

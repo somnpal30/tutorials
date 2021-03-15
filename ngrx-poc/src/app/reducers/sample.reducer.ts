@@ -16,6 +16,29 @@ export const initialState: SampleState = {
   sum: 0
 };
 
+export interface MessageState {
+  message: string;
+}
+
+export const initialisedMessage: MessageState = {
+  message: 'Hello World !'
+};
+
+function greet() {
+  var date = new Date();
+  var hrs = date.getHours();
+  var message = '';
+  if (hrs < 12) {
+    message = 'Good Morning !';
+  } else if (hrs >= 12 && hrs < 17) {
+    message = 'Good Afternoon !';
+  } else if (hrs >= 17 && hrs < 24) {
+    message = 'Good Evening !';
+  }
+
+  return message;
+}
+
 
 export const reducer = createReducer(
   initialState,
@@ -43,4 +66,12 @@ const addProductQuantity = (products: Product[]): number => {
   return sum;
 };
 
+export const messageReducer = createReducer(initialisedMessage,
+  on(ProductActions.displayMessage, (state, action) => {
+    return {
+      ...state,
+      message: greet() + ' user '
+    };
+  })
+);
 

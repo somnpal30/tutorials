@@ -1,6 +1,6 @@
 import {createReducer, on} from '@ngrx/store';
 import * as ProductState from '../product.state';
-  import {ProductActions} from '../action-type';
+import {ProductActions} from '../action-type';
 
 export const productListFeatureKey = 'productList';
 
@@ -17,6 +17,7 @@ export const productReducer = createReducer(ProductState.productsInitialState,
     return [...state, product];
   })
 );
+
 
 
 

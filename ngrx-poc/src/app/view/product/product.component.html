@@ -1,7 +1,14 @@
-<div class="container" >
-  <div class="card-header ">Products</div>
+<div class="container">
+  <div class="card-header row">
+    <div class="col-6"><p>Products</p></div>
+    <div class="col-4">
+      <button class="btn btn-success" (click)="test()">Greet</button>
+    </div>
+    <div class="col-2">
+      <p>{{greetingMessage$ | async}}</p></div>
+    </div>
   <div class="card-body">
-  <app-product-add></app-product-add>
-  <app-product-display></app-product-display>
+    <app-product-add></app-product-add>
+    <app-product-display></app-product-display>
   </div>
 </div>
